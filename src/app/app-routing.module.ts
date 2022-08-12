@@ -17,7 +17,7 @@ const routes: Routes = [
     {path:'single-image',component:SingleImageComponent}
   ]},
   {path:'category',component:ManageCategoryComponent, children:[
-    {path:'single-catorgory',component:SingleCategoryComponent}
+    {path:'single-category',component:SingleCategoryComponent}
   ]},
   {path:'item',component:ManageItemComponent, children:[
     {path:'single-item',component:SingleItemComponent}
