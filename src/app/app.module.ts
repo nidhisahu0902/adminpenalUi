@@ -9,6 +9,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ManageCategoryComponent } from './components/manage-category/manage-category.component';
 import { ManageItemComponent } from './components/manage-item/manage-item.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ManageItemComponent } from './components/manage-item/manage-item.compon
     ContactUsComponent,
     GalleryComponent,
     ManageCategoryComponent,
-    ManageItemComponent
+    ManageItemComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
