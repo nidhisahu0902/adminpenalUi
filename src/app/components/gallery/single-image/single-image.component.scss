@@ -4,11 +4,7 @@ div.content {
     padding: 1px 16px;
     height: 1000px;
   }
-.btn{
-  float:right!important; 
-  background-color: rgb(154, 209, 227); 
-  margin-top:-70px!important;
-}
+
   
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
   @media screen and (max-width: 700px) {
