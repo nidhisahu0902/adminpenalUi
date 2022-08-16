@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import 'boxicons';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
@@ -14,6 +14,11 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SingleItemComponent } from './components/manage-item/single-item/single-item.component';
 import { SingleCategoryComponent } from './components/manage-category/single-category/single-category.component';
 import { SingleImageComponent } from './components/gallery/single-image/single-image.component';
+import { AllImagesComponent } from './components/gallery/all-images/all-images.component';
+import { AllCategoriesComponent } from './components/manage-category/all-categories/all-categories.component';
+import { AllItemsComponent } from './components/manage-item/all-items/all-items.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,10 @@ import { SingleImageComponent } from './components/gallery/single-image/single-i
     NavbarComponent,
     SingleItemComponent,
     SingleCategoryComponent,
-    SingleImageComponent
+    SingleImageComponent,
+    AllImagesComponent,
+    AllCategoriesComponent,
+    AllItemsComponent
   ],
   imports: [
     BrowserModule,
