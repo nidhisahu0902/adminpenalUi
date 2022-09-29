@@ -11,5 +11,8 @@ export class SingleItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(itemData:any)
+  {
+    console.log(itemData)
+  }
 }

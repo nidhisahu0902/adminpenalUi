@@ -11,5 +11,8 @@ export class SingleCategoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(data:any)
+  {
+    console.log(data)
+  }
 }

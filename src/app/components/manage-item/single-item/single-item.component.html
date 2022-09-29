@@ -12,20 +12,20 @@
         </ol>
     </nav>
     <div class="container">
-      <form class="mt-4 border" style="padding: 20px;">
+      <form #itemData="ngForm" (ngSubmit)="onSubmit(itemData.value)"  class="mt-4 border" style="padding: 20px;">
         <div class="form-group">
           <label>Item Name</label>
-          <input type="text" class="form-control">
+          <input type="text" name="itemName" ngModel required class="form-control">
         
         </div>
           <div class="form-group mt-4">
             <label>Select Image</label>
-            <input type="file" class="form-control">
+            <input type="file" name="image" ngModel  class="form-control">
           
           </div>
           <div class="form-group mt-4">
             <label for="exampleFormControlSelect1">Select Category</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" name="category" ngModel id="exampleFormControlSelect1">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -35,15 +35,15 @@
           </div>
           <div class="form-group mt-4">
             <label>Description</label>
-             <textarea class="form-control id="description></textarea>
+             <textarea name="description" ngModel required class="form-control id="description></textarea>
           </div>
           <div class="form-group mt-4">
             <label>Price</label>
-            <input type="number" class="form-control" id="sort">
+            <input type="number" name="price" ngModel required class="form-control" id="sort">
           </div>
           <div class="form-group mt-4">
             <label>Sort</label>
-            <input type="number" class="form-control" id="sort">
+            <input type="number" name="sort" ngModel required="" class="form-control" id="sort">
           </div>
 
           <button type="submit" class="btn btn-secondary mt-4">Submit</button>
