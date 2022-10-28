@@ -11,5 +11,9 @@ export class SingleImageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(value:any)
+  {
+    console.log(value)
+    value = "";
+  }
 }

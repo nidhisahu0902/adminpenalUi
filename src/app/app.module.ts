@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -17,6 +19,10 @@ import { SingleImageComponent } from './components/gallery/single-image/single-i
 import { AllImagesComponent } from './components/gallery/all-images/all-images.component';
 import { AllCategoriesComponent } from './components/manage-category/all-categories/all-categories.component';
 import { AllItemsComponent } from './components/manage-item/all-items/all-items.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 
 
 
@@ -41,7 +47,11 @@ import { AllItemsComponent } from './components/manage-item/all-items/all-items.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

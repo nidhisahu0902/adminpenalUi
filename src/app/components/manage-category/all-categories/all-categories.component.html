@@ -24,31 +24,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
+            <tr *ngFor="let data of allCategory; let i = index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{data.categoryName}}</td>
+              <td>{{data.sort}}</td>
               <td>
-                  <i class='bx bx-trash text-danger'></i>
-                  <i class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
-              </td>                
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>
-                  <i class='bx bx-trash text-danger'></i>
-                  <i class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
-              </td>                
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Nidhi</td>
-              <td>Otto</td>
-              <td>
-                  <i class='bx bx-trash text-danger'></i>
-                  <i class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
+                  <i (click)="delete(data.id)" class='bx bx-trash text-danger'></i>
+                  <i routerLink="/category/edit-category/{{data.id}}" class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
               </td>                
             </tr>
           </tbody>

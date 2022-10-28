@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
   selector: 'app-single-category',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleCategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public categoryService:CategoryService) { }
 
   ngOnInit(): void {
   }
   onSubmit(data:any)
   {
     console.log(data)
+    this.categoryService.add(data)
+    
   }
+  
 }

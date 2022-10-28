@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "adminpanelui"
+  },
+  "targets": {
+    "adminpanelui": {
+      "hosting": {
+        "adminpanelUi": [
+          "adminpanelui"
+        ]
+      }
+    }
   }
 }

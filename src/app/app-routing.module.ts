@@ -22,7 +22,8 @@ const routes: Routes = [
   ]},
   {path:'category',component:ManageCategoryComponent, children:[
     {path:'',component:AllCategoriesComponent},
-    {path:'single-category',component:SingleCategoryComponent}
+    {path:'single-category',component:SingleCategoryComponent},
+    {path:'edit-category/:id',component:SingleCategoryComponent}
   ]},
   {path:'item',component:ManageItemComponent, children:[
     {path:'',component:AllItemsComponent},
