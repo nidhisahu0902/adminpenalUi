@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CategoryService } from 'src/app/service/category.service';
 export class SingleCategoryComponent implements OnInit {
   index:any
   category:any=null;
-  constructor(public categoryService:CategoryService, public route :ActivatedRoute) { }
+  constructor(public categoryService:CategoryService, public route :ActivatedRoute,public router:RouterOutlet) { }
 
   ngOnInit(): void {
     this.index = this.route.snapshot.paramMap.get("id")
@@ -24,6 +24,7 @@ export class SingleCategoryComponent implements OnInit {
     if (this.index)
     {
       this.categoryService.edit(this.index,data)
+      
     }
     else
     {
