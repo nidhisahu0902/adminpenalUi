@@ -25,12 +25,10 @@
           </div>
           <div class="form-group mt-4">
             <label for="exampleFormControlSelect1">Select Category</label>
-            <select class="form-control" name="category" ngModel id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <select class="form-control" name="categoryName" ngModel>
+              <option>Select Category</option>
+              <option  *ngFor="let category of categories"  >{{category.categoryName}}</option>
+            
             </select>
           </div>
           <div class="form-group mt-4">
