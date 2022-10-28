@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
@@ -7,16 +8,27 @@ import { CategoryService } from 'src/app/service/category.service';
   styleUrls: ['./single-category.component.scss']
 })
 export class SingleCategoryComponent implements OnInit {
-
-  constructor(public categoryService:CategoryService) { }
+  index:any
+  category:any=null;
+  constructor(public categoryService:CategoryService, public route :ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.index = this.route.snapshot.paramMap.get("id")
+    this.categoryService.getSingleCategory(this.index).subscribe(res=>{
+      this.category = res
+      console.log(this.category,"catogory")
+    })
   }
   onSubmit(data:any)
   {
-    console.log(data)
-    this.categoryService.add(data)
-    
+    if (this.index)
+    {
+      this.categoryService.edit(this.index,data)
+    }
+    else
+    {
+      this.categoryService.add(data)
+    }
   }
-  
+
 }

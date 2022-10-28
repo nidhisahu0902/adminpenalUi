@@ -35,4 +35,8 @@ export class CategoryService {
   {
     this.database.collection(this.collection).doc(id).update(data)
   }
+  getSingleCategory(id:any)
+  {
+     return this.database.collection(this.collection).doc(id).valueChanges()
+  }
 }
