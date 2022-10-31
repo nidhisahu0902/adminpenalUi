@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
+
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -50,6 +53,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
