@@ -23,45 +23,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>18993774</td>
-     
-            <td>messgae</td>
+          <tr *ngFor="let contact of allContactDetails; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{contact.userName}}</td>
+            <td>{{contact.mail}}</td>
+            <td>{{contact.Number}}</td>
+            <td>{{contact.Number}}</td>
+            <td>{{contact.message}}</td>
 
             <td>
-                <i class='bx bx-trash text-danger'></i>
-             
-            </td>                
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>18993774</td>
-     
-            <td>messgae</td>
-
-            <td>
-                <i class='bx bx-trash text-danger'></i>
-             
-            </td>                
-          </tr>  
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>18993774</td>
-     
-            <td>messgae</td>
-
-            <td>
-                <i class='bx bx-trash text-danger'></i>
-             
-            </td>                
-          </tr>
+              <i class='bx bx-trash text-danger'></i>
+            </td>
+           </tr>
+ 
           </tbody>
       </table>
 </div>
