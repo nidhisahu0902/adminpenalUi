@@ -18,7 +18,8 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'gallery',component:GalleryComponent, children:[
     {path:'',component:AllImagesComponent},
-    {path:'single-image',component:SingleImageComponent}
+    {path:'single-image',component:SingleImageComponent},
+    {path:'edit-image/:id',component:SingleImageComponent}
   ]},
   {path:'category',component:ManageCategoryComponent, children:[
     {path:'',component:AllCategoriesComponent},

@@ -24,31 +24,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
+              <tr *ngFor="let image of allImages; let i = index">
+                <th scope="row">{{i+1}}</th>
                 <td>
-                    <i class='bx bx-trash text-danger'></i>
-                    <i class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
-                </td>                
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Mark</td>
-                <td>Otto</td>
+                  <img src="{{image.url}}" style="height:100px; width:100px;" alt="no image">
+                </td>
+                <td>{{image.sort}}</td>
                 <td>
-                    <i class='bx bx-trash text-danger'></i>
-                    <i class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
-                </td>                
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Nidhi</td>
-                <td>Otto</td>
-                <td>
-                    <i class='bx bx-trash text-danger'></i>
-                    <i class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
+                    <i (click)="deleteImage(image.id, image.imagePath)" class='bx bx-trash text-danger'></i>
+                    <i routerLink="/gallery/edit-image/{{image.id}}" class='bx bx-edit-alt text-warning' style="padding-left: 15px;"></i>
                 </td>                
               </tr>
             </tbody>

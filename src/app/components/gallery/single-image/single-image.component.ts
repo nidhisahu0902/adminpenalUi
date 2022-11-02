@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GalleryService } from 'src/app/service/gallery.service';
 
 @Component({
@@ -10,15 +11,36 @@ import { GalleryService } from 'src/app/service/gallery.service';
 export class SingleImageComponent implements OnInit {
   defaultImage = "assets/images/upload.png"
   selectedImage = null;
-  id=null;
+  id;
   imagePath:any;
   imageEvent:any
   allGalleryData:any;
-  constructor(public galleryService:GalleryService) { }
+  singleImageData:any;
+  showEditImage:boolean = false;
+
+  constructor(public galleryService:GalleryService,public route:ActivatedRoute,public router:Router) {
+    this.id = this.route.snapshot.paramMap.get("id")
+    if(this.id)
+    {
+      this.showEditImage = true;
+    }
+    else
+    {
+      this.showEditImage = false;
+    }
+   }
 
   ngOnInit(): void {
+    this.getSingleImageData()
   }
 
+  getSingleImageData()
+  {
+    this.galleryService.getById(this.id).subscribe(res=>{
+      this.singleImageData = res
+      console.log(this.singleImageData)
+    })
+  }
   onSubmit(value:any)
   {
     console.log(value)
@@ -27,7 +49,7 @@ export class SingleImageComponent implements OnInit {
         this.galleryService.update(this.id, value,this.imagePath,this.imageEvent).then(res=>{
           this.imagePath=null;
           this.imageEvent=null;
-          value.resetForm();
+          this.router.navigateByUrl("/gallery")
 
           window.alert("Photo updated")
         })
@@ -60,7 +82,7 @@ export class SingleImageComponent implements OnInit {
     }
     let now = new Date();
     let rand =now.toString()
-    let path = "gallery/Images/1"+rand
+    let path = "gallery/1"+rand
     this.imagePath = path
     this.imageEvent = event.target.files[0];
   }
